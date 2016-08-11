@@ -9,20 +9,30 @@
 import UIKit
 import Parse
 
+
+
 class showListOFPostsTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     let posts:NSMutableArray=[]
     var category:NSString!
-    let textCellIdentifier = "TextCell"
+    let cellReuseIdentifier = "cell"
     
     @IBOutlet weak var tableview: UITableView!
     
+    
+    
     override func viewDidLoad() {
+        
+               
         super.viewDidLoad()
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.retriveParsePosts()
-        self.tableview.registerClass(UITableViewCell.self, forCellReuseIdentifier: textCellIdentifier)
+       
+        
+        // Register the table view cell class and its reuse id
+       // self.tableview.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        
 
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 30, width: self.view.bounds.size.width, height: 44))
         self.view.addSubview(navBar);
@@ -53,6 +63,8 @@ class showListOFPostsTableViewController: UIViewController,UITableViewDelegate,U
         // #warning Incomplete implementation, return the number of rows
         return self.posts.count
     }
+    
+    
     
     func  retriveParsePosts() ->Void  {
         
@@ -89,20 +101,33 @@ class showListOFPostsTableViewController: UIViewController,UITableViewDelegate,U
 
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath)
+        
+
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) ?? UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellReuseIdentifier)
+        
+        
 
         // Configure the cell...
         
+        let price = self.posts.valueForKey("amt")[indexPath.row] as? String
         
+        //currency format
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        let numberFromField = (NSString(string: price!).doubleValue)
+        let newPrice = formatter.stringFromNumber(numberFromField)
         
-        
-        let row = indexPath.row
-        cell.textLabel?.text = self.posts.valueForKey("title")[row] as? String
+       
+        //show txt on cell
+        cell.textLabel!.text = self.posts.valueForKey("title")[indexPath.row] as? String
+        cell.detailTextLabel?.text = newPrice
         
         
 
         return cell
     }
+    
     
 
     /*
