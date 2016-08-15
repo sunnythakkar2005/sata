@@ -16,8 +16,10 @@ class showListOFPostsTableViewController: UIViewController,UITableViewDelegate,U
     let posts:NSMutableArray=[]
     var category:NSString!
     let cellReuseIdentifier = "cell"
+    var imageView:UIImageView! = nil
     
     @IBOutlet weak var tableview: UITableView!
+    
     
     
     
@@ -64,6 +66,18 @@ class showListOFPostsTableViewController: UIViewController,UITableViewDelegate,U
         return self.posts.count
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "showDetailedPost" {
+            
+            
+            
+            
+            
+            
+            
+        }
+    }
+
     
     
     func  retriveParsePosts() ->Void  {
@@ -123,6 +137,25 @@ class showListOFPostsTableViewController: UIViewController,UITableViewDelegate,U
         cell.textLabel!.text = self.posts.valueForKey("title")[indexPath.row] as? String
         cell.detailTextLabel?.text = newPrice
         
+        //add Image View
+        
+        
+        let imageFile = self.posts.valueForKey("image1") as? [AnyObject]
+        
+        imageFile![indexPath.row].getDataInBackgroundWithBlock{
+            (imageData: NSData?, error: NSError?) -> Void in
+            
+            if imageData != nil{
+                let image = UIImage(data: imageData!)
+                print("image received")
+                self.imageView = UIImageView(image: image!)
+                self.imageView.frame = CGRect(x: 200, y: 0, width: 80, height: 80)
+                cell.addSubview(self.imageView)
+                //cell.cellAvatarImage.image = image
+            } else {
+                print(error)
+            }
+        }
         
 
         return cell
