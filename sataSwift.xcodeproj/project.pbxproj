@@ -19,6 +19,7 @@
 		A32977A31D537982000B8104 /* sataSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32977A21D537982000B8104 /* sataSwiftUITests.swift */; };
 		A37F5FF51D54CEBC00433435 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F5FF41D54CEBC00433435 /* MyCollectionViewCell.swift */; };
 		A3AB2B181D61ED9600C3E443 /* showPostDetialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB2B171D61ED9600C3E443 /* showPostDetialsTableViewController.swift */; };
+		A3AB2B1A1D6333D500C3E443 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB2B191D6333D500C3E443 /* ImageGalleryView.swift */; };
 		A3DB76671D55C634000B01D8 /* sataPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB76661D55C634000B01D8 /* sataPost.swift */; };
 		A3DB76691D574349000B01D8 /* createPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB76681D574349000B01D8 /* createPostViewController.swift */; };
 		A3DB766B1D57446D000B01D8 /* showListOFPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB766A1D57446D000B01D8 /* showListOFPostsTableViewController.swift */; };
@@ -64,6 +65,7 @@
 		A32977A41D537982000B8104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A37F5FF41D54CEBC00433435 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3AB2B171D61ED9600C3E443 /* showPostDetialsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showPostDetialsTableViewController.swift; sourceTree = "<group>"; };
+		A3AB2B191D6333D500C3E443 /* ImageGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
 		A3DB76661D55C634000B01D8 /* sataPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sataPost.swift; sourceTree = "<group>"; };
 		A3DB76681D574349000B01D8 /* createPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createPostViewController.swift; sourceTree = "<group>"; };
 		A3DB766A1D57446D000B01D8 /* showListOFPostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showListOFPostsTableViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		A32977761D537981000B8104 = {
 			isa = PBXGroup;
 			children = (
+				A3AB2B191D6333D500C3E443 /* ImageGalleryView.swift */,
 				A3AB2B171D61ED9600C3E443 /* showPostDetialsTableViewController.swift */,
 				A3DB766A1D57446D000B01D8 /* showListOFPostsTableViewController.swift */,
 				A3DB76681D574349000B01D8 /* createPostViewController.swift */,
@@ -452,6 +455,7 @@
 				A3DB76691D574349000B01D8 /* createPostViewController.swift in Sources */,
 				A32977831D537982000B8104 /* AppDelegate.swift in Sources */,
 				A37F5FF51D54CEBC00433435 /* MyCollectionViewCell.swift in Sources */,
+				A3AB2B1A1D6333D500C3E443 /* ImageGalleryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

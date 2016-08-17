@@ -67,7 +67,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             let indexPaths : NSArray = self.collectionView!.indexPathsForSelectedItems()!
             let indexPath : NSIndexPath = indexPaths[0] as! NSIndexPath
             
-            print (self.posts.objectAtIndex(indexPath.row).valueForKey("Name") as! String)
+           // print (self.posts.objectAtIndex(indexPath.row).valueForKey("Name") as! String)
             
             let vc = segue.destinationViewController as! showListOFPostsTableViewController
             

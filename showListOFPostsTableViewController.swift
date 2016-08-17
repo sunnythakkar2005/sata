@@ -70,8 +70,13 @@ class showListOFPostsTableViewController: UIViewController,UITableViewDelegate,U
         if segue.identifier == "showDetailedPost" {
             
             
+            let nav = segue.destinationViewController as! UINavigationController
+            let vc = nav.topViewController as! showPostDetialsTableViewController
             
+            let indexPaths : NSArray = self.tableview!.indexPathsForSelectedRows!
+            let indexPath : NSIndexPath = indexPaths[0] as! NSIndexPath
             
+            vc.parseObj = self.posts.objectAtIndex(indexPath.row) as! PFObject
             
             
             
